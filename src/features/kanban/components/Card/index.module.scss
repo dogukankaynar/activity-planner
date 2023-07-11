@@ -1,0 +1,13 @@
+.container{
+    color: white;
+    width: 90%;
+    height: 40px;
+    background-color: #201e1e;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 4px;
+}
+.container:hover{
+    background-color: #574d4d;
+}
