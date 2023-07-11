@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-Event Scheduler Project
+
+
+## Aktivity Planner
 
 This project is a event scheduler developed using Next.js and TypeScript. The project includes features such as event planning, SCSS styling, data sharing using Context API, and a popup for event registration.
 
