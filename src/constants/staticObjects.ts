@@ -1,7 +1,8 @@
 export type ElementType = {
-  id: number | undefined;
+  id: number ;
   title: string;
   desc: string;
+  itemId?:number;
 };
 export type DataType = {
   name: string;

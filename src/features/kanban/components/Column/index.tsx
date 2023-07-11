@@ -4,6 +4,21 @@ import styles from "./index.module.scss";
 import { DataType } from "../../../../constants/staticObjects";
 import Popup from "../Popup";
 
+
+
+export const getColumnClassName = (id:number) => {
+
+  if (id === 1) {
+    return styles.columnOne;
+  } else if (id === 2) {
+    return styles.columnTwo;
+  } else if (id === 3) {
+    return styles.columnThree;
+  }
+};
+
+
+
 const Column: React.FC<DataType> = ({ name, id, elements }) => {
   
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -11,14 +26,14 @@ const Column: React.FC<DataType> = ({ name, id, elements }) => {
   return (
     <div className={styles.container}>
       <div className={styles.row}>
-        <h1>{name}</h1>
+        <h1 className={`${getColumnClassName(id)}`}> <p></p> {name}</h1>
         <button onClick={() => setIsOpen(true)}>+</button>
       </div>
       {
         isOpen && <Popup isOpen={isOpen} setIsOpen={setIsOpen} id={id} />   
       }
       {elements.map((item,index) => (
-        <Card key={index} title={item.title} desc={item.desc} id={item.id} />
+        <Card key={index} title={item.title} desc={item.desc} id={id} itemId={item.id} />
       ))}
     </div>
   );

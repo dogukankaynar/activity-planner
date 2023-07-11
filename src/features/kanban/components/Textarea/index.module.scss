@@ -2,10 +2,13 @@
     width: 90%;
     padding: 8px;
     border: 1px solid rgb(216, 193, 193);
+    background-color: #6b676749;
     border-radius: 4px;
     height: 60px;
+    border: none;
+    color: white;
+    font-size: 16px;
 }
 .textInput:focus{
     outline: none;
-    border: 1px solid rgb(21, 21, 212);
 }

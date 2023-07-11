@@ -3,8 +3,12 @@
     padding: 8px;
     border: 1px solid rgb(216, 193, 193);
     border-radius: 4px;
+    background-color: #6b676749;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 16px;
 }
 .textInput:focus{
     outline: none;
-    border: 1px solid rgb(21, 21, 212);
 }
