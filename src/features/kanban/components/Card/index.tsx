@@ -3,10 +3,10 @@ import React from 'react'
 import styles from "./index.module.scss"
 
 
-const Card:React.FC<ElementType> = ({id,name}) => {
+const Card:React.FC<ElementType> = ({id,title,desc}) => {
   return (
     <div className={styles.container}>
-        {name}
+        {title}
     </div>
   )
 }

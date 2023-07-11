@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Card from "../Card";
 import styles from "./index.module.scss";
-import { data, DataType } from "../../../../constants/staticObjects";
+import { DataType } from "../../../../constants/staticObjects";
 import Popup from "../Popup";
 
 const Column: React.FC<DataType> = ({ name, id, elements }) => {
+  
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  
   return (
     <div className={styles.container}>
       <div className={styles.row}>
@@ -13,10 +15,10 @@ const Column: React.FC<DataType> = ({ name, id, elements }) => {
         <button onClick={() => setIsOpen(true)}>+</button>
       </div>
       {
-        isOpen && <Popup isOpen={isOpen} setIsOpen={setIsOpen} />   
+        isOpen && <Popup isOpen={isOpen} setIsOpen={setIsOpen} id={id} />   
       }
-      {elements.map((item) => (
-        <Card key={item.id} name={item.name} id={item.id} />
+      {elements.map((item,index) => (
+        <Card key={index} title={item.title} desc={item.desc} id={item.id} />
       ))}
     </div>
   );

@@ -1,27 +1,19 @@
-export type ElementType ={
-    id:number;
-    name:string;
-}
-export type DataType={
-    name:string;
-    id:number;
-    elements:ElementType[];
-}
+export type ElementType = {
+  id: number | undefined;
+  title: string;
+  desc: string;
+};
+export type DataType = {
+  name: string;
+  id: number;
+  elements: ElementType[];
+};
 
-export const data:DataType[] = [
+export const data: DataType[] = [
   {
     name: "Yapılacaklar",
     id: 1,
-    elements: [
-      {
-        id: 11,
-        name: "yapılacak 1",
-      },
-      {
-        id: 12,
-        name: "yapılacak 2",
-      },
-    ],
+    elements: [],
   },
   {
     name: "Devam Ediyor",
@@ -31,11 +23,6 @@ export const data:DataType[] = [
   {
     name: "Tamamlandı",
     id: 3,
-    elements: [
-      {
-        id: 32,
-        name: "tamam 2",
-      },
-    ],
+    elements: [],
   },
 ];

@@ -20,6 +20,7 @@
     padding: 8px;
     flex-direction: column;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    gap: 8px;
 }
 .main h1{
     border-bottom: 1px solid grey;
@@ -29,10 +30,17 @@
     color: black;
 }
 .main button {
+    width: 100px;
     margin-top: 8px;
     background-color: blue;
     color: white;
     border: none;
     padding: 8px;
     border-radius: 5px;
+    float: right;
+    margin-right:8px ;
+}
+.button{
+    width: 100%;
+    align-items: center;
 }
