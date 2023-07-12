@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Card from "../Card";
 import styles from "./index.module.scss";
-import { DataType } from "../../../../constants/staticObjects";
 import Popup from "../Popup";
+import { DataType } from "@/store/todoSlice";
 
 
 

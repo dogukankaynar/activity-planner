@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { ElementType } from "@/constants/staticObjects";
 import { addTodo } from "@/store/todoSlice";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
