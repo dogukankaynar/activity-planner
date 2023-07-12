@@ -1,6 +1,17 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+
+## Aktivity Planner
+
+This project is a event scheduler developed using Next.js and TypeScript. The project includes features such as event planning, SCSS styling, data sharing using Context API, and a popup for event registration.
+
+## Features
+
+- Event planning: Users can add, edit, and delete events by specifying the dates, times, and details.
+- SCSS styling support: The project can be easily customized and styled using SCSS.
+- Data sharing using Context API: Context API is used for sharing data throughout the application, making it easy to transfer data between components.
+- Popup for event registration: Users can register for events using a popup window.
+
 
 First, run the development server:
 
