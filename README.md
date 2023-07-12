@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Aktivity Planner
 
 This project is a event scheduler developed using Next.js and TypeScript. The project includes features such as event planning, SCSS styling, data sharing using Context API, and a popup for event registration.
+# Live
+https://activity-planner-eta.vercel.app/
 
 ## Features
 
