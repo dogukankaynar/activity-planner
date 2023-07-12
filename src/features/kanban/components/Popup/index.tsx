@@ -43,6 +43,7 @@ const index: React.FC<Props> = ({ isOpen, setIsOpen, id }) => {
 
         <div className={styles.button}>
           <button onClick={handleAddButtonClick}>Add</button>
+          <button className={styles.close} onClick={()=>setIsOpen(false)}>Close</button>
         </div>
       </div>
     </div>

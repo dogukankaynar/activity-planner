@@ -1,17 +1,11 @@
 import Head from "next/head";
 import Kanban from "@/features/kanban";
 import { Inter } from 'next/font/google'
-import type { RootState } from '../store/index'
-// import { useSelector, useDispatch } from 'react-redux'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
-  // const todo = useSelector((state: RootState) => state.todo.value)
-  // const dispatch = useDispatch()
-
-  
+export default function Home() { 
   
   return (
     <>

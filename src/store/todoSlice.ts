@@ -51,9 +51,18 @@ export const todoSlice = createSlice({
         column.elements = [...column.elements, currentPayload];
       }
     },
+    deleteTodo: (state, action: PayloadAction<number>) => {
+      console.log(state.value);
+      const currentState = current(state)
+      
+
+      // const column = state.value.find(
+      //   (column) => column.id === currentPayload.itemId
+      // )
+    },
   },
 });
 
-export const { addTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;

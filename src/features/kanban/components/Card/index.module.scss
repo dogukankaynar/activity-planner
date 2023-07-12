@@ -10,4 +10,11 @@
     cursor:default;
 
     }
+    .content{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 4px;
+        justify-content: space-between;
+    }
 }
