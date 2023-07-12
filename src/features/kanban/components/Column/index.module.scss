@@ -26,47 +26,39 @@
         font-size: 20px;
         background-color:#5e4141 ;
         color:white;
+        cursor: pointer;
     }
-    .columnOne{
-        background-color: #373737;
+    .title{
         border-radius: 8px;
         display: flex;
         align-items: center;
         gap: 8px;
         padding: 8px;
+        cursor:default;
         p{
-            background-color: #9B9B9B;
             width: 16px;
             height: 16px;
             border-radius: 50%;
         }
     }
+    .columnOne{
+        background-color: #373737;
+        p{
+            background-color: #9B9B9B;
+        }
+ 
+    }
     .columnTwo{
         background-color: #28456C;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px;
+
         p{
             background-color: #2E7CD1;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
         }
     }
     .columnThree{
         background-color: #2B593F;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px;
         p{
             background-color: #2D9964;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
         }
     }
     .columnOne:hover{

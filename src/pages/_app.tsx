@@ -1,11 +1,14 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import  {DataProvider}  from '../context/DataContext'
+import { store } from '../store'
+import { Provider } from 'react-redux'
+
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <DataProvider>
+    <Provider store={store}>
       <Component {...pageProps} />
-    </DataProvider>
+    </Provider>
   )
 }

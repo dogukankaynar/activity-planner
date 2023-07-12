@@ -1,9 +1,11 @@
 import { useDataList } from "@/context/DataContext";
+import { RootState } from "@/store";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import Column from "./components/Column";
 import styles from "./index.module.scss";;
 const Kanban = () => {
-  const {todo,setTodo}=useDataList();  
+   const todo = useSelector((state: RootState) => state.todo.value)
   return (
     <div className={styles.container}>
       {todo.map((item) => (

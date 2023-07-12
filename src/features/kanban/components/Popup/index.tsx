@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { ElementType } from "@/constants/staticObjects";
-import { useDataList } from "@/context/DataContext";
+import { addTodo } from "@/store/todoSlice";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import Input from "../Input";
 import InputDesc from "../Textarea";
-import styles from "./styles.module.css";
+import styles from "./index.module.scss";
 
 type Props = {
   isOpen: boolean;
@@ -13,26 +14,23 @@ type Props = {
 };
 
 const index: React.FC<Props> = ({ isOpen, setIsOpen, id }) => {
-  const {todo } = useDataList();
   const [title, setTitle] = useState<string>("");
   const [desc, setNewDesc] = useState<string>("");
+  const dispatch = useDispatch();
 
   const handleAddButtonClick = () => {
-    if(title && desc){
-      todo.map((item) => {
-        if (item.id === id) {
-          item.elements.push({
-            id: new Date().getTime(),
-            title: `${title}`,
-            desc: `${desc}`,
-          });
-        }
-      });
+    if (title && desc) {
       setIsOpen(false);
-      console.log("todo :>> ", todo);
-    }
-    else{
-      alert("tüm alanları doldur")
+      dispatch(
+        addTodo({
+          id: new Date().getTime(),
+          title: `${title}`,
+          desc: `${desc}`,
+          parentId: id,
+        })
+      );
+    } else {
+      alert("tüm alanları doldur");
     }
   };
 

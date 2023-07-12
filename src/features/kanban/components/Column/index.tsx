@@ -26,7 +26,7 @@ const Column: React.FC<DataType> = ({ name, id, elements }) => {
   return (
     <div className={styles.container}>
       <div className={styles.row}>
-        <h1 className={`${getColumnClassName(id)}`}> <p></p> {name}</h1>
+        <h1 className={`${styles.title} ${getColumnClassName(id)}`}> <p></p> {name}</h1>
         <button onClick={() => setIsOpen(true)}>+</button>
       </div>
       {
