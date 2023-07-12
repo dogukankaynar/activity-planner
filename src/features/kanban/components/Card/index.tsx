@@ -10,7 +10,8 @@ const Card: React.FC<ElementType> = ({ id, title, desc, itemId }) => {
   const dispatch=useDispatch()
   const handleAddButtonClick=()=>{
     if(itemId){
-      dispatch(deleteTodo(id))
+      const taskId={id:id,itemId:itemId}
+      dispatch(deleteTodo(taskId))
     }
   }
   return (
