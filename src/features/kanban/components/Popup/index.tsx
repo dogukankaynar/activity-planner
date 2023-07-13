@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { addTodo } from "@/store/todoSlice";
+import { addTodo, editTodo } from "@/store/todoSlice";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Input from "../Input";
@@ -10,24 +10,49 @@ type Props = {
   isOpen: boolean;
   setIsOpen: (val: boolean) => void;
   id: number;
+  itemId?: number;
 };
 
-const index: React.FC<Props> = ({ isOpen, setIsOpen, id }) => {
+const index: React.FC<Props> = ({ isOpen, setIsOpen, id, itemId }) => {
   const [title, setTitle] = useState<string>("");
   const [desc, setNewDesc] = useState<string>("");
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (itemId) {
+      console.log("edit durumunda");
+      // if(itemId){
+      //   const taskId={id:id,itemId:itemId}
+      //   dispatch(editTodo(taskId))
+      // }
+    }
+  }, [dispatch, id, itemId]);
+
   const handleAddButtonClick = () => {
-    if (title && desc) {
-      setIsOpen(false);
+    if (itemId) {
+      console.log("itemId: >>>", itemId);
+      const cardInfo = { columnId: id, itemId: itemId };
+      const element = { title: title, desc: desc, id: itemId };
       dispatch(
-        addTodo({
-          id: new Date().getTime(),
-          title: `${title}`,
-          desc: `${desc}`,
-          parentId: id,
+        editTodo({
+          ...cardInfo,
+          element,
         })
       );
+      setIsOpen(false);
+    }
+    if (title && desc) {
+      if (!itemId) {
+        setIsOpen(false);
+        dispatch(
+          addTodo({
+            id: new Date().getTime(),
+            title: `${title}`,
+            desc: `${desc}`,
+            parentId: id,
+          })
+        );
+      }
     } else {
       alert("tüm alanları doldur");
     }
@@ -42,7 +67,9 @@ const index: React.FC<Props> = ({ isOpen, setIsOpen, id }) => {
 
         <div className={styles.button}>
           <button onClick={handleAddButtonClick}>Add</button>
-          <button className={styles.close} onClick={()=>setIsOpen(false)}>Close</button>
+          <button className={styles.close} onClick={() => setIsOpen(false)}>
+            Close
+          </button>
         </div>
       </div>
     </div>

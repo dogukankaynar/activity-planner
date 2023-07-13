@@ -7,6 +7,12 @@ export interface TodoState {
 type DeleteType = {
   id: number;
   itemId: number;
+  columnId?: number;
+};
+type EditType = {
+  columnId: number;
+  itemId: number;
+  element: ElementType;
 };
 
 export type ElementType = {
@@ -56,30 +62,32 @@ export const todoSlice = createSlice({
       }
     },
     deleteTodo: (state, action: PayloadAction<DeleteType>) => {
-      const currentState = current(state.value);
-      console.log("currentState: ", currentState);
-      const currentPayload = action.payload;
-      console.log("currentPayload", currentPayload);
-
-      const column = state.value.find((column) => column.id === currentPayload.id);
+      const { id, itemId } = action.payload;
+      const column = state.value.find((column) => column.id === id);
 
       if (column) {
-        const filteredElements = currentState.map((item) => {
-          if (item.id === currentPayload.id) {
-            const updatedElements = item.elements.filter((innerItem) => innerItem.id !== currentPayload.itemId);
-            return { ...item, elements: updatedElements };
-          }
-          return item;
-        });
-      
-        column.elements = filteredElements.find((item) => item.id === currentPayload.id)?.elements || [];
+        const updatedElements = column.elements.filter(
+          (item) => item.id !== itemId
+        );
+        column.elements = updatedElements;
       }
-      
-      
+    },
+    editTodo: (state, action: PayloadAction<EditType>) => {
+      const { columnId, itemId, element } = action.payload;
+      const column = state.value.find((column) => column.id === columnId);
+      if (column) {
+        let updateElements = column.elements.filter(
+          (item) => item.id !== itemId
+        );
+        column.elements = [
+          ...updateElements,
+          { id: element.id, title: element.title, desc: element.desc },
+        ];
+      }
     },
   },
 });
 
-export const { addTodo, deleteTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo, editTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;
