@@ -17,4 +17,12 @@
         padding: 4px;
         justify-content: space-between;
     }
+    .row{
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+    
+    }
 }

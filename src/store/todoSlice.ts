@@ -76,11 +76,11 @@ export const todoSlice = createSlice({
       const { columnId, itemId, element } = action.payload;
       const column = state.value.find((column) => column.id === columnId);
       if (column) {
-        let updateElements = column.elements.filter(
+        let lastElemnt = column.elements.filter(
           (item) => item.id !== itemId
         );
         column.elements = [
-          ...updateElements,
+          ...lastElemnt,
           { id: element.id, title: element.title, desc: element.desc },
         ];
       }
