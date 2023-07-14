@@ -21,7 +21,7 @@ export const getColumnClassName = (id:number) => {
 
 const Column: React.FC<DataType> = ({ name, id, elements }) => {
   
- const [isOpen, setIsOpen] = useState<boolean>(true);
+ const [isOpen, setIsOpen] = useState<boolean>(false);
   
   return (
     <div className={styles.container}>
