@@ -30,7 +30,7 @@
 .main p{
     color: black;
 }
-.main button {
+.main .open {
     width: 100px;
     margin-top: 8px;
     background-color: #2B593F;
@@ -48,4 +48,20 @@
 }
 .button .close{
     background-color: rgba(185, 8, 8, 0.788);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    float: right;
+    margin-right:8px ;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    width: 100px;
+    margin-top: 8px;
+}
+
+.selector{
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 4px;
 }

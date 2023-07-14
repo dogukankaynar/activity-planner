@@ -62,11 +62,11 @@ const index: React.FC<Props> = ({ isOpen, setIsOpen, id, itemId }) => {
     <div className={styles.container}>
       <div className={styles.main}>
         <Input title={title} setTitle={setTitle} />
-
         <InputDesc desc={desc} setNewDesc={setNewDesc} />
-
         <div className={styles.button}>
-          <button onClick={handleAddButtonClick}>Add</button>
+          <button className={styles.open} onClick={handleAddButtonClick}>
+            Add
+          </button>
           <button className={styles.close} onClick={() => setIsOpen(false)}>
             Close
           </button>

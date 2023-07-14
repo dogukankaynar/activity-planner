@@ -1,14 +1,15 @@
 .container {
     color: white;
     width: 90%;
-    height: 40px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     padding: 4px;
     border-radius: 4px;
+    padding: 10px;
     span{
     cursor:default;
-
+   
     }
     .content{
         display: flex;
@@ -16,6 +17,24 @@
         align-items: center;
         padding: 4px;
         justify-content: space-between;
+        .item{
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            p{
+                max-width: 80%;
+                font-size: 12px;
+                overflow: hidden;
+                word-wrap: break-word;
+                max-width: 230px;
+                background-color: transparent;
+                color:rgba(209, 201, 201, 0.815);
+            }
+            span{
+                font-weight:bold;
+            }
+        }
     }
     .row{
         display: flex;
@@ -26,6 +45,5 @@
         span{
             cursor: pointer;
         }
-    
     }
 }

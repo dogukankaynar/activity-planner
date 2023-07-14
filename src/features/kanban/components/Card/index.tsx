@@ -22,7 +22,11 @@ const Card: React.FC<ElementType> = ({ id, title, desc, itemId }) => {
   return (
     <div className={`${styles.container} ${getColumnClassName(id)}`}>
       <div className={styles.content}>
+        <div className={styles.item}>
         <span>{title}</span>
+        <p>{desc}</p>
+        </div>
+        
         <div className={styles.row}>
           <span
             onClick={handleEditButton}
