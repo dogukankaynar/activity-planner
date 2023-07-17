@@ -11,7 +11,7 @@ https://activity-planner-eta.vercel.app/
 
 - Event planning: Users can add, edit, and delete events by specifying the dates, times, and details.
 - SCSS styling support: The project can be easily customized and styled using SCSS.
-- Data sharing using Context API: Context API is used for sharing data throughout the application, making it easy to transfer data between components.
+- Data sharing using Redux: Redux is used for sharing data throughout the application, making it easy to transfer data between components.
 - Popup for event registration: Users can register for events using a popup window.
 
 
